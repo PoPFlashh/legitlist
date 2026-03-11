@@ -109,12 +109,12 @@ async function main() {
       console.log(`✅ Created collection: "${COLLECTION_NAME}" (id: ${collection.id})`)
     }
 
+    // ── Load vendors first — fail before touching Framer state ───────────
+    const vendors    = loadVendors()
+
     // ── Sync field schema ──────────────────────────────────────────────────
     console.log("🔧 Syncing field schema…")
     await collection.setFields(FIELDS)
-
-    // ── Diff: figure out what to add / remove ─────────────────────────────
-    const vendors    = loadVendors()
     const newSlugs   = new Set(vendors.map((v) => v.slug))
     const existingIds = await collection.getItemIds()
     const toRemove   = existingIds.filter((id) => !newSlugs.has(id))

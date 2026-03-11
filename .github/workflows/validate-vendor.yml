@@ -4,7 +4,9 @@ on:
   pull_request:
     paths:
       - "vendors/*.json"
+      - "vendors/_schema.json"
       - "logos/**"
+      - "scripts/validate-all.mjs"
 
 jobs:
   validate:
@@ -17,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install validators
         run: npm install -g ajv-cli ajv-formats
