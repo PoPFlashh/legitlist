@@ -55,20 +55,25 @@ function loadVendors() {
   return vendors
 }
 
+// FieldDataEntryInput helpers — each field must be a typed object, not a plain value
+const str  = (value)        => ({ type: "string", value: value ?? "" })
+const link = (value)        => ({ type: "link",   value: value || null })
+const img  = (value)        => ({ type: "image",  value: value || null })
+
 function vendorToItem(v) {
   return {
     id: v.slug,
     slug: v.slug,
     fieldData: {
-      vendorName:  v.name,
-      website:     v.website,
-      region:      v.region,
-      country:     v.country,
-      logoUrl:     `${LOGO_BASE}${v.logo}`,
-      description: v.description ?? "",
-      socialX:     v.social?.x         ?? "",
-      socialIg:    v.social?.instagram  ?? "",
-      socialYt:    v.social?.youtube    ?? "",
+      vendorName:  str(v.name),
+      website:     link(v.website),
+      region:      str(v.region),
+      country:     str(v.country),
+      logoUrl:     img(`${LOGO_BASE}${v.logo}`),
+      description: str(v.description),
+      socialX:     link(v.social?.x),
+      socialIg:    link(v.social?.instagram),
+      socialYt:    link(v.social?.youtube),
     },
   }
 }
