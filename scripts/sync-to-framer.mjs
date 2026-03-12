@@ -54,7 +54,7 @@ const FIELDS = [
   { id: "website",      type: "link",    name: "Website" },
   { id: "region",       type: "string",  name: "Region" },
   { id: "country",      type: "string",  name: "Country" },
-  { id: "active",       type: "boolean", name: "Active" },
+  { id: "vendorActive", type: "string",  name: "Active" },
   { id: "logoUrl",      type: "image",   name: "Logo" },
   { id: "description",  type: "string",  name: "Description" },
   { id: "socialX",      type: "link",    name: "X / Twitter" },
@@ -81,7 +81,6 @@ function loadVendors() {
 }
 
 // FieldDataEntryInput helpers — each field must be a typed object, not a plain value
-const bool = (value)        => ({ type: "boolean", value: Boolean(value) })
 const str  = (value)        => ({ type: "string", value: value ?? "" })
 const link = (value)        => ({ type: "link",   value: value || null })
 const img  = (value)        => ({ type: "image",  value: value || null })
@@ -139,7 +138,7 @@ function vendorToItem(v) {
       website:     link(v.website),
       region:      str(v.region),
       country:     str(v.country),
-      active:      bool(v.active),
+      vendorActive:str(v.active ? "true" : "false"),
       logoUrl:     img(`${LOGO_BASE}logos/${v.logo}`),
       description: str(v.description),
       socialX:     link(v.social?.x),

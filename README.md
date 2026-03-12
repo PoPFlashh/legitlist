@@ -36,7 +36,7 @@ Vendor submits PR → Community reviews → Core team merges → Listed on site
 
 That's it. No forms, no emails, no waiting in a queue. Fork the repo, add your files, open a PR. The conversation happens right there.
 
-Only vendors with `active: true` should be displayed on the site.
+Only vendors marked as active should be displayed on the site.
 
 ---
 
