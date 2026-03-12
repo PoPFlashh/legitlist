@@ -31,12 +31,10 @@ _Fill this in yourself. The community will verify during review._
 
 ## Files checklist
 
-_CI catches most of these, but double-check before submitting:_
+_Double-check before submitting:_
 
 - [ ] JSON is at `vendors/{slug}.json` and the `slug` field matches the filename exactly
 - [ ] Logo is at `logos/{slug}.png` (or .jpg / .webp), square, max 200 KB
-- [ ] `"active": true` is set
-- [ ] CI validation passes ✅
 
 ---
 

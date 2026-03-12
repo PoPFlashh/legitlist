@@ -58,7 +58,7 @@ A few notes:
 - **`active`** — leave it as `true`. The team manages this field; it only gets changed if a listing is suspended.
 - **Social links** — include the full URL or leave the field as an empty string `""` to skip it.
 
-Valid regions: `North America` · `South America` · `Europe` · `Asia Pacific` · `Middle East & Africa`
+Valid regions: `Europe` · `North America` · `South America` · `Asia Pacific` · `Middle East` · `Africa` · `India`
 
 **`logos/{your-slug}.png`**
 

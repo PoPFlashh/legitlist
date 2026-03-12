@@ -2,7 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Bitaxe Vendor",
   "type": "object",
-  "required": ["name", "slug", "website", "region", "country", "logo", "active"],
+  "required": [
+    "name",
+    "slug",
+    "website",
+    "region",
+    "country",
+    "logo",
+    "active"
+  ],
   "additionalProperties": false,
   "properties": {
     "name": {
@@ -24,11 +32,13 @@
     "region": {
       "type": "string",
       "enum": [
+        "Europe",
         "North America",
         "South America",
-        "Europe",
         "Asia Pacific",
-        "Middle East & Africa"
+        "Middle East",
+        "Africa",
+        "India"
       ],
       "description": "Geographic region for filtering on the Bitaxe website"
     },
@@ -59,22 +69,40 @@
         "x": {
           "description": "Full URL to X (Twitter) profile, or empty string to omit",
           "oneOf": [
-            { "type": "string", "format": "uri" },
-            { "type": "string", "maxLength": 0 }
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "maxLength": 0
+            }
           ]
         },
         "instagram": {
           "description": "Full URL to Instagram profile, or empty string to omit",
           "oneOf": [
-            { "type": "string", "format": "uri" },
-            { "type": "string", "maxLength": 0 }
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "maxLength": 0
+            }
           ]
         },
         "youtube": {
           "description": "Full URL to YouTube channel, or empty string to omit",
           "oneOf": [
-            { "type": "string", "format": "uri" },
-            { "type": "string", "maxLength": 0 }
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "string",
+              "maxLength": 0
+            }
           ]
         }
       }
